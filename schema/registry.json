@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "shared": "schema/_shared.schema.json",
+  "types": {
+    "feed-item": {
+      "folder": "feed",
+      "layout": "dated",
+      "schema": "schema/feed-item.schema.json",
+      "id_prefix": "feed-item/",
+      "sections": ["Summary", "Why It Matters"]
+    }
+  }
+}

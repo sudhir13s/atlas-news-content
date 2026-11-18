@@ -1,0 +1,16 @@
+{
+  "name": "atlas-news-content",
+  "domain": "news",
+  "title": "AI News — feed items",
+  "schema_version": "1.0",
+  "description": "The AI news feed as portable records: ranked, tagged and summarized news items, papers and repositories, each with the quote its summary rests on, its review score and the run that wrote it. Content only — Markdown + JSON Schema + docs, zero code.",
+  "entrypoints": {
+    "human": "README.md",
+    "agent": "AGENTS.md",
+    "conventions": "CONVENTIONS.md",
+    "registry": "schema/registry.json"
+  },
+  "types": ["feed-item"],
+  "license": "CC-BY-4.0",
+  "standard": "https://github.com/sudhir13s/TheAIAtlas/blob/main/docs/content-repo-standard.md"
+}
