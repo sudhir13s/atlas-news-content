@@ -14,7 +14,7 @@ humans and AI agents. This repo is **content only**: no code, no build step.
 It is the `news` domain of a multi-repo reference library
 (`atlas-models-content`, `atlas-evaluation-content`, `atlas-frameworks-content`,
 `atlas-hardware-content`, `atlas-news-content`), all following the same
-[content-repo standard](https://github.com/sudhir13s/TheAIAtlas/blob/main/docs/content-repo-standard.md).
+[content-repo standard](CONTENT-STANDARD.md).
 
 ## What's inside
 
