@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theaiatlas.dev/schema/news/newsletter-source.schema.json",
+  "title": "newsletter-source",
+  "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
+  "properties": {
+    "type": { "const": "newsletter-source" },
+    "publisher": {
+      "type": "string",
+      "minLength": 1,
+      "description": "the person or organisation that publishes the newsletter, as the publisher names itself"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "description": "the publisher's own page for the newsletter"
+    },
+    "feed_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "the public RSS or Atom feed the publisher advertises; the job matches this address to its source entry"
+    },
+    "cadence": {
+      "type": "string",
+      "minLength": 1,
+      "description": "how often the publisher says it publishes; absent when the publisher does not say"
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
+      "description": "language of the issues, as an ISO 639-1 code"
+    }
+  },
+  "required": ["publisher", "homepage", "feed_url", "language"]
+}
