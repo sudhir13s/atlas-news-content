@@ -17,10 +17,14 @@ this file is the `news`-domain instance.
   The registry marks the type `"layout": "dated"`; a month stays far below GitHub's advised
   limit of 3,000 entries per folder.
 
+- A newsletter source is a flat file `newsletters/<slug>.md`; its slug is the newsletter's name as
+  lowercase ASCII words joined by hyphens.
+
 ## IDs
 
-- `id` = `feed-item/<slug>`. Globally unique, **immutable**.
-- A feed item references no other record today, so it has no cross-reference fields.
+- `id` = `feed-item/<slug>` or `newsletter-source/<slug>`. Globally unique, **immutable**.
+- A feed item of kind `newsletter` references its source in `newsletter_source`
+  (`newsletter-source/<slug>`); the reference must resolve. No other feed item references a record.
 
 ## Frontmatter
 
@@ -33,13 +37,14 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
 | `url` | Canonical address of the item; unique across the repo |
 | `source` | Name of the entry in `config/sources.yaml` that delivered it |
 | `source_tool` | The fetch tool that read it (`rss`, `arxiv`, `github`) |
+| `newsletter_source` | Only on kind `newsletter`: `newsletter-source/<slug>`, the source the issue belongs to |
 | `published_at` | UTC timestamp the source published it; `null` if unknown |
-| `relevance` | Integer 0 to 10 |
-| `quote` | The passage of the source the summary rests on, word for word |
+| `relevance` | Integer 0 to 10; `0` on a newsletter issue, which no one scored |
+| `quote` | The passage of the source the summary rests on, word for word; absent on a newsletter issue |
 | `credit` | Licence or credit line the source requires |
 | `fields` | Values copied from the source (authors, stars, categories) |
-| `review` | `score` (0 to 10, worked out by code from the Critic's verdicts), `reviewed_by` (`provider`, `model`), `prompt_versions` (`writer`, `critic`) |
-| `generated_by` | `job`, `run_id`, `provider`, `model`, `prompt_version` of the writer |
+| `review` | `score` (0 to 10, worked out by code from the Critic's verdicts), `reviewed_by` (`provider`, `model`), `prompt_versions` (`writer`, `critic`); absent on a newsletter issue |
+| `generated_by` | `job`, `run_id`, and the writer's `provider`, `model`, `prompt_version`; a newsletter issue names the job and run only, because code wrote it |
 
 - `tags`: lowercase, hyphen-separated, from the closed list in `config/taxonomy/feed-tags.yaml`.
 - `updated`: ISO date the file was written.
@@ -47,13 +52,37 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
 - Facts (`url`, `title`, `published_at`, `kind`, `fields`, `credit`) are copied by code from the
   source; a model wrote only the tags, relevance and the two sections.
 
+## Newsletter issues
+
+- An issue is a `feed-item` of kind `newsletter`, copied from the publisher's feed by code with no
+  model: `title`, `url`, `published_at` and the feed's own short description as the `Summary`.
+- The `Summary` is cut at 300 characters on a word boundary and is empty when the feed gives no
+  description. The full issue text is never stored.
+- `tags` is empty and `relevance` is `0`: no one ranked or tagged the issue.
+
+## Newsletter sources
+
+| Field | Meaning |
+|---|---|
+| `publisher` | The person or organisation that publishes the newsletter |
+| `homepage` | The publisher's own page for the newsletter |
+| `feed_url` | The public feed the publisher advertises; the job matches it to its `config/sources.yaml` entry |
+| `cadence` | How often the publisher says it publishes; left out when it does not say |
+| `language` | ISO 639-1 code of the issues |
+
+- A source is added only when the publisher advertises a public feed, `robots.txt` allows reading
+  it and the publisher's terms do not bar automated reading. The `Overview` is the author's own
+  words, taken from the publisher's pages; anything the publisher does not state stays out.
+
 ## Body sections
 
-Two `##` sections, in this order:
+A feed item has `##` sections, in this order:
 
 1. `## Summary` — what the item says, one or two sentences.
 2. `## Why It Matters` — why it matters to the AI ecosystem; the single word `unknown` is allowed
-   when the source does not say.
+   when the source does not say. Optional: a newsletter issue has none.
+
+A newsletter source has one section, `## Overview`.
 
 ## Sourcing
 

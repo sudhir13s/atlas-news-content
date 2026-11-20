@@ -2,13 +2,30 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/news/feed-item.schema.json",
   "title": "feed-item",
-  "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
+  "allOf": [
+    { "$ref": "_shared.schema.json#/$defs/base" },
+    {
+      "if": { "properties": { "kind": { "const": "newsletter" } }, "required": ["kind"] },
+      "then": { "required": ["newsletter_source"] },
+      "else": {
+        "required": ["quote", "review"],
+        "properties": {
+          "generated_by": { "required": ["provider", "model", "prompt_version"] }
+        }
+      }
+    }
+  ],
   "properties": {
     "type": { "const": "feed-item" },
     "kind": { "type": "string", "enum": ["news", "paper", "repository", "newsletter"] },
     "url": { "type": "string", "format": "uri", "minLength": 1 },
     "source": { "type": "string", "minLength": 1 },
     "source_tool": { "type": "string", "minLength": 1 },
+    "newsletter_source": {
+      "type": "string",
+      "pattern": "^newsletter-source/[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "the newsletter-source record an issue belongs to; present only on kind newsletter"
+    },
     "published_at": {
       "type": ["string", "null"],
       "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"
@@ -45,8 +62,13 @@
     },
     "generated_by": {
       "type": "object",
-      "required": ["job", "run_id", "provider", "model", "prompt_version"],
+      "required": ["job", "run_id"],
       "additionalProperties": false,
+      "dependentRequired": {
+        "provider": ["model", "prompt_version"],
+        "model": ["provider", "prompt_version"],
+        "prompt_version": ["provider", "model"]
+      },
       "properties": {
         "job": { "type": "string", "minLength": 1 },
         "run_id": { "type": "integer", "minimum": 0 },
@@ -63,10 +85,8 @@
     "source_tool",
     "published_at",
     "relevance",
-    "quote",
     "credit",
     "fields",
-    "review",
     "generated_by"
   ],
   "unevaluatedProperties": false

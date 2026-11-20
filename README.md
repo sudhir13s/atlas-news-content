@@ -1,12 +1,14 @@
 # atlas-news-content
 
 The **AI news feed** of TheAIAtlas as portable records: news items, papers and repositories, each
-ranked, tagged and summarized, with the quote its summary rests on and the score of its review.
+ranked, tagged and summarized, with the quote its summary rests on and the score of its review;
+newsletter issues copied from the publisher's feed; and one record per newsletter the feed follows.
 Authored as Markdown with structured YAML frontmatter, validated by JSON Schema, readable by
 humans and AI agents. This repo is **content only**: no code, no build step.
 
-- **Written by a scheduled job**, the `news-digest` job of TheAIAtlas. It commits and pushes
-  here; no one approves items by hand.
+- **Written by scheduled jobs**, the `news-digest` and `newsletter-sync` jobs of TheAIAtlas. They
+  commit and push here; no one approves items by hand. `newsletter-source` records are written by
+  hand.
 - **Rebuildable:** a consumer database is a copy of these files and can always be rebuilt from them.
 - **Traceable:** every file names the job run, model and prompts that produced it, and every
   job commit carries the same facts as trailers, so a run can be reverted as one commit.
@@ -20,7 +22,8 @@ It is the `news` domain of a multi-repo reference library
 
 | Type | Folder | What it captures |
 |------|--------|------------------|
-| `feed-item` | `feed/<year>/<month>/` | One news item, paper, repository (later: newsletter issue): source facts copied by code, plus a summary, why it matters, the supporting quote, relevance, review score and provenance |
+| `feed-item` | `feed/<year>/<month>/` | One news item, paper, repository or newsletter issue: source facts copied by code, plus (except for a newsletter issue) a summary, why it matters, the supporting quote, relevance, review score and provenance. A newsletter issue holds the feed's title, link, date and short description only |
+| `newsletter-source` | `newsletters/` | One newsletter the feed follows: publisher, homepage, feed address, stated cadence, language, and a short factual overview |
 
 ## Quick start
 
@@ -31,8 +34,9 @@ git clone https://github.com/sudhir13s/atlas-news-content.git
 git submodule add https://github.com/sudhir13s/atlas-news-content.git content/news-src
 ```
 
-Every file is Markdown with YAML frontmatter (the structured fields) and a body of two sections
-(`Summary`, `Why It Matters`). Enumerate the feed by globbing `feed/**/*.md`, or start from
+Every file is Markdown with YAML frontmatter (the structured fields) and a body of named sections
+(a feed item: `Summary` and `Why It Matters`; a newsletter source: `Overview`). Enumerate the feed
+by globbing `feed/**/*.md` and the newsletters by `newsletters/*.md`, or start from
 [`meta.json`](meta.json) and [`schema/registry.json`](schema/registry.json).
 
 ## Structure
@@ -43,6 +47,7 @@ schema/registry.json      # type → folder/layout/schema/sections map (machine 
 schema/*.schema.json      # JSON Schema per content type
 templates/*.template.md   # copy these to author a record by hand
 feed/<year>/<month>/      # one file per item, filed by published date; `feed/undated/` if none
+newsletters/              # one file per newsletter source
 assets/                   # SVG diagrams
 ```
 
