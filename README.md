@@ -31,7 +31,7 @@ It is the `news` domain of a multi-repo reference library
 # Vendor it
 git clone https://github.com/sudhir13s/atlas-news-content.git
 # or as a submodule of your project
-git submodule add https://github.com/sudhir13s/atlas-news-content.git content/news-src
+git submodule add https://github.com/sudhir13s/atlas-news-content.git content/atlas-news-content
 ```
 
 Every file is Markdown with YAML frontmatter (the structured fields) and a body of named sections
