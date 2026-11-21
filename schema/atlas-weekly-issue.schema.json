@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theaiatlas.dev/schema/news/atlas-weekly-issue.schema.json",
+  "title": "atlas-weekly-issue",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "required": ["title"],
+      "additionalProperties": false,
+      "anyOf": [{ "required": ["url"] }, { "required": ["record"] }],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri", "description": "the outside page an item links to; absent for a library record" },
+        "record": { "$ref": "_shared.schema.json#/$defs/id", "description": "the library record an item links to; absent for an outside page" },
+        "source": { "type": "string", "minLength": 1, "description": "the feed source or newsletter the item came from" },
+        "note": { "type": "string", "minLength": 1, "description": "the item's stored one-line summary, copied by code" },
+        "group": { "type": "string", "minLength": 1, "description": "the content domain (the library tab) a new record belongs to, in the section that lists additions" }
+      }
+    },
+    "section": {
+      "type": "object",
+      "required": ["title", "total", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "total": { "type": "integer", "minimum": 0, "description": "how many the week held, before the list was cut to its size" },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/item" } }
+      }
+    }
+  },
+  "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
+  "properties": {
+    "type": { "const": "atlas-weekly-issue" },
+    "week_start": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "the Monday the issue's week starts on" },
+    "week_end": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "the Sunday the issue's week ends on" },
+    "sections": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/section" } },
+    "generated_by": {
+      "type": "object",
+      "required": ["job", "run_id"],
+      "additionalProperties": false,
+      "dependentRequired": {
+        "provider": ["model", "prompt_version"],
+        "model": ["provider", "prompt_version"],
+        "prompt_version": ["provider", "model"]
+      },
+      "description": "the run that assembled the issue; provider, model and prompt_version are present only when a model wrote the introduction",
+      "properties": {
+        "job": { "type": "string", "minLength": 1 },
+        "run_id": { "type": "integer", "minimum": 0 },
+        "provider": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "minLength": 1 },
+        "prompt_version": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "required": ["week_start", "week_end", "sections", "generated_by"],
+  "unevaluatedProperties": false
+}

@@ -29,7 +29,7 @@
         "id": { "$ref": "#/$defs/id" },
         "type": {
           "type": "string",
-          "enum": ["feed-item", "newsletter-source"]
+          "enum": ["feed-item", "newsletter-source", "atlas-weekly-issue"]
         },
         "slug": { "$ref": "#/$defs/slug" },
         "schema_version": { "type": ["string", "number"] },

@@ -31,8 +31,8 @@ Follow these steps.
 
 ## 4. Validate
 
-- Load the type's schema, `schema/feed-item.schema.json` or `schema/newsletter-source.schema.json`
-  (shared `$defs` in `schema/_shared.schema.json`).
+- Load the type's schema, `schema/feed-item.schema.json`, `schema/newsletter-source.schema.json`
+  or `schema/atlas-weekly-issue.schema.json` (shared `$defs` in `schema/_shared.schema.json`).
 - Validate the frontmatter against it (any JSON-Schema draft-2020-12 validator).
 - Check the file name equals `slug`, and `id` equals `<type>/<slug>`.
 - Check `newsletter_source` names an existing `newsletter-source` record.
