@@ -3,7 +3,7 @@
   "domain": "news",
   "title": "AI News — feed items and newsletter sources",
   "schema_version": "1.1",
-  "description": "The AI news feed as portable records: ranked, tagged and summarized news items, papers and repositories, each with the quote its summary rests on, its review score and the run that wrote it; newsletter issues copied from the publisher's feed; and one record per newsletter the feed follows. Content only — Markdown + JSON Schema + docs, zero code.",
+  "description": "The AI news feed as portable records: ranked, tagged and summarized news items, each with the quote its summary rests on, its review score and the run that wrote it; newsletter issues copied from the publisher's feed; and one record per newsletter the feed follows. Content only — Markdown + JSON Schema + docs, zero code.",
   "entrypoints": {
     "human": "README.md",
     "agent": "AGENTS.md",

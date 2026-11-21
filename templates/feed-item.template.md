@@ -4,15 +4,15 @@ type: feed-item
 slug: <YYYY-MM-DD>-<title-words>-<8-hex-of-url-hash>
 schema_version: 1.1
 title: "<Title of the item as the source published it>"
-kind: news                        # news | paper | repository | newsletter
+kind: news                        # news | newsletter
 url: "<canonical address>"
 source: "<name from config/sources.yaml>"
-source_tool: rss                  # the fetch tool that read it: rss | arxiv | github
+source_tool: rss                  # the fetch tool that read it: rss
 published_at: "<YYYY-MM-DDTHH:MM:SS+00:00>"   # UTC; null when the source gave no date
 relevance: 7                      # 0 to 10; 0 on a newsletter issue, which no one scored
 quote: "<the passage of the source the summary rests on, word for word>"   # not on a newsletter issue
 credit: "<licence or credit line the source requires>"
-fields: {}                        # values copied from the source (authors, stars, categories)
+fields: {}                        # values copied from the source (categories)
 review:                           # not on a newsletter issue
   score: 10.0                     # the Critic's score, 0 to 10
   reviewed_by: { provider: "<provider>", model: "<model>" }

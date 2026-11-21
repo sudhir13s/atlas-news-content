@@ -8,26 +8,16 @@
       "if": { "properties": { "kind": { "const": "newsletter" } }, "required": ["kind"] },
       "then": { "required": ["newsletter_source"] },
       "else": {
-        "if": {
-          "properties": {
-            "kind": { "const": "paper" },
-            "generated_by": { "not": { "required": ["provider"] } }
-          },
-          "required": ["kind", "generated_by"]
-        },
-        "then": { "required": ["fields"] },
-        "else": {
-          "required": ["quote", "review"],
-          "properties": {
-            "generated_by": { "required": ["provider", "model", "prompt_version"] }
-          }
+        "required": ["quote", "review"],
+        "properties": {
+          "generated_by": { "required": ["provider", "model", "prompt_version"] }
         }
       }
     }
   ],
   "properties": {
     "type": { "const": "feed-item" },
-    "kind": { "type": "string", "enum": ["news", "paper", "repository", "newsletter"] },
+    "kind": { "type": "string", "enum": ["news", "newsletter"] },
     "url": { "type": "string", "format": "uri", "minLength": 1 },
     "source": { "type": "string", "minLength": 1 },
     "source_tool": { "type": "string", "minLength": 1 },

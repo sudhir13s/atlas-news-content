@@ -1,6 +1,6 @@
 # atlas-news-content
 
-The **AI news feed** of TheAIAtlas as portable records: news items, papers and repositories, each
+The **AI news feed** of TheAIAtlas as portable records: news items, each
 ranked, tagged and summarized, with the quote its summary rests on and the score of its review;
 newsletter issues copied from the publisher's feed; and one record per newsletter the feed follows.
 Authored as Markdown with structured YAML frontmatter, validated by JSON Schema, readable by
@@ -22,7 +22,7 @@ It is the `news` domain of a multi-repo reference library
 
 | Type | Folder | What it captures |
 |------|--------|------------------|
-| `feed-item` | `feed/<year>/<month>/` | One news item, paper, repository or newsletter issue: source facts copied by code, plus (except for a newsletter issue) a summary, why it matters, the supporting quote, relevance, review score and provenance. A newsletter issue holds the feed's title, link, date and short description only |
+| `feed-item` | `feed/<year>/<month>/` | One news item or newsletter issue: source facts copied by code, plus (except for a newsletter issue) a summary, why it matters, the supporting quote, relevance, review score and provenance. A newsletter issue holds the feed's title, link, date and short description only |
 | `newsletter-source` | `newsletters/` | One newsletter the feed follows: publisher, homepage, feed address, stated cadence, language, and a short factual overview |
 
 ## Quick start

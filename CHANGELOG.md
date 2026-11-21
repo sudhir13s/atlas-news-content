@@ -13,6 +13,12 @@ All notable changes to `atlas-news-content`. Grouped by schema version / release
   belong to. A newsletter issue is copied from the publisher's feed by code: it has no `quote`, no
   `review`, no `Why It Matters` section, and its `generated_by` names the job and run only.
 
+### Removed
+- `feed-item` kinds `paper` and `repository`. Recent papers moved to `atlas-research-content`
+  (Research shows them) with their files unchanged; the repository items were deleted, because
+  GitHub repositories are not news. `kind` is now `news` or `newsletter`, and the code-copied paper
+  rules are gone from the schema.
+
 ### Changed
 - `feed-item`: `quote`, `review` and `generated_by.provider`, `model`, `prompt_version` are required
   only for kinds other than `newsletter`; the `Why It Matters` section is optional.
