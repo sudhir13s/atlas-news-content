@@ -13,6 +13,10 @@ All notable changes to `atlas-news-content`. Grouped by schema version / release
   belong to. A newsletter issue is copied from the publisher's feed by code: it has no `quote`, no
   `review`, no `Why It Matters` section, and its `generated_by` names the job and run only.
 
+- The `atlas-weekly-issue` type (folder `issues/`, schema 1.2): one record per ISO week, written by
+  the `atlas-weekly` job. `sections` holds the week's added library records, headlines, papers and
+  newsletter issues as linked lists; an optional `## Introduction` is the only model-written text.
+
 ### Removed
 - `feed-item` kinds `paper` and `repository`. Recent papers moved to `atlas-research-content`
   (Research shows them) with their files unchanged; the repository items were deleted, because
@@ -25,6 +29,7 @@ All notable changes to `atlas-news-content`. Grouped by schema version / release
 
 ## Schema versions
 
+- **1.2** — adds the `atlas-weekly-issue` type. Existing records stay valid unchanged.
 - **1.1** — adds the `newsletter-source` type and the `newsletter_source` field; relaxes `feed-item`
   for code-written newsletter issues. Existing records stay valid unchanged.
 - **1.0** — initial schema for the `feed-item` type.

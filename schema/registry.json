@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "shared": "schema/_shared.schema.json",
   "types": {
     "feed-item": {
@@ -15,6 +15,13 @@
       "schema": "schema/newsletter-source.schema.json",
       "id_prefix": "newsletter-source/",
       "sections": ["Overview"]
+    },
+    "atlas-weekly-issue": {
+      "folder": "issues",
+      "schema": "schema/atlas-weekly-issue.schema.json",
+      "id_prefix": "atlas-weekly-issue/",
+      "sections": [],
+      "optional_sections": ["Introduction"]
     }
   }
 }

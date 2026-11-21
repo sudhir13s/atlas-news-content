@@ -24,6 +24,7 @@ It is the `news` domain of a multi-repo reference library
 |------|--------|------------------|
 | `feed-item` | `feed/<year>/<month>/` | One news item or newsletter issue: source facts copied by code, plus (except for a newsletter issue) a summary, why it matters, the supporting quote, relevance, review score and provenance. A newsletter issue holds the feed's title, link, date and short description only |
 | `newsletter-source` | `newsletters/` | One newsletter the feed follows: publisher, homepage, feed address, stated cadence, language, and a short factual overview |
+| `atlas-weekly-issue` | `issues/` | One weekly issue of Atlas Weekly: the week's added library records, top headlines, papers and newsletter issues as linked lists, assembled by code, and an optional model-written introduction |
 
 ## Quick start
 
@@ -48,6 +49,7 @@ schema/*.schema.json      # JSON Schema per content type
 templates/*.template.md   # copy these to author a record by hand
 feed/<year>/<month>/      # one file per item, filed by published date; `feed/undated/` if none
 newsletters/              # one file per newsletter source
+issues/                   # one file per Atlas Weekly issue, named by ISO week (`2026-w47.md`)
 assets/                   # SVG diagrams
 ```
 

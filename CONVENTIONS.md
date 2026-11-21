@@ -22,7 +22,8 @@ this file is the `news`-domain instance.
 
 ## IDs
 
-- `id` = `feed-item/<slug>` or `newsletter-source/<slug>`. Globally unique, **immutable**.
+- `id` = `feed-item/<slug>`, `newsletter-source/<slug>` or `atlas-weekly-issue/<slug>`. Globally
+  unique, **immutable**.
 - A feed item of kind `newsletter` references its source in `newsletter_source`
   (`newsletter-source/<slug>`); the reference must resolve. No other feed item references a record.
 
@@ -79,6 +80,20 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
   it and the publisher's terms do not bar automated reading. The `Overview` is the author's own
   words, taken from the publisher's pages; anything the publisher does not state stays out.
 
+## Atlas Weekly issues
+
+- An issue is a flat file `issues/<YYYY>-w<WW>.md`; its slug names the ISO week it covers, so one
+  week always maps to one file and a rerun never duplicates it. `id` = `atlas-weekly-issue/<slug>`.
+- `week_start` (Monday) and `week_end` (Sunday) are dates. `sections` is a list of `{title, total,
+  items}`; `total` is how many the week held before the list was cut, and each item is `{title,
+  url or record, source, note, group}` copied by code from the feed or the library.
+- An item with `record` points at a library record (`<type>/<slug>`) in another repository; one
+  with `url` points outside.
+- A model writes only the optional `## Introduction`. Its `generated_by` then adds `provider`,
+  `model` and `prompt_version`; without an introduction `generated_by` names the job and run only.
+- An issue is written once for its week and not rewritten; a week with no additions and no items
+  has no issue.
+
 ## Body sections
 
 A feed item has `##` sections, in this order:
@@ -87,7 +102,8 @@ A feed item has `##` sections, in this order:
 2. `## Why It Matters` — why it matters to the AI ecosystem; the single word `unknown` is allowed
    when the source does not say. Optional: a newsletter issue has none.
 
-A newsletter source has one section, `## Overview`.
+A newsletter source has one section, `## Overview`. An Atlas Weekly issue has the optional
+`## Introduction` and nothing else.
 
 ## Sourcing
 
