@@ -8,9 +8,19 @@
       "if": { "properties": { "kind": { "const": "newsletter" } }, "required": ["kind"] },
       "then": { "required": ["newsletter_source"] },
       "else": {
-        "required": ["quote", "review"],
-        "properties": {
-          "generated_by": { "required": ["provider", "model", "prompt_version"] }
+        "if": {
+          "properties": {
+            "kind": { "const": "paper" },
+            "generated_by": { "not": { "required": ["provider"] } }
+          },
+          "required": ["kind", "generated_by"]
+        },
+        "then": { "required": ["fields"] },
+        "else": {
+          "required": ["quote", "review"],
+          "properties": {
+            "generated_by": { "required": ["provider", "model", "prompt_version"] }
+          }
         }
       }
     }

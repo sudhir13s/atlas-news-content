@@ -60,6 +60,15 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
   description. The full issue text is never stored.
 - `tags` is empty and `relevance` is `0`: no one ranked or tagged the issue.
 
+## Papers copied by code
+
+- A `feed-item` of kind `paper` whose `generated_by` names no model was copied from the paper
+  source (arXiv, Hugging Face Papers) by code: `title`, `url`, `published_at`, `fields` (including
+  the paper's `arxiv_id`, `authors` and any counts the source gives) and the abstract as the source
+  gives it as the `Summary`.
+- It has no `quote`, `review` or `Why It Matters`; `tags` is empty and `relevance` is `0`.
+- Papers written by a model, which older files hold, keep every field of the other kinds.
+
 ## Newsletter sources
 
 | Field | Meaning |
