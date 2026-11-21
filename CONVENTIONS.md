@@ -33,16 +33,16 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
 
 | Field | Meaning |
 |---|---|
-| `kind` | `news`, `paper`, `repository` or `newsletter`; decided by the fetch tool, never by a model |
+| `kind` | `news` or `newsletter`; decided by the fetch tool, never by a model |
 | `url` | Canonical address of the item; unique across the repo |
 | `source` | Name of the entry in `config/sources.yaml` that delivered it |
-| `source_tool` | The fetch tool that read it (`rss`, `arxiv`, `github`) |
+| `source_tool` | The fetch tool that read it (`rss`) |
 | `newsletter_source` | Only on kind `newsletter`: `newsletter-source/<slug>`, the source the issue belongs to |
 | `published_at` | UTC timestamp the source published it; `null` if unknown |
 | `relevance` | Integer 0 to 10; `0` on a newsletter issue, which no one scored |
 | `quote` | The passage of the source the summary rests on, word for word; absent on a newsletter issue |
 | `credit` | Licence or credit line the source requires |
-| `fields` | Values copied from the source (authors, stars, categories) |
+| `fields` | Values copied from the source (categories) |
 | `review` | `score` (0 to 10, worked out by code from the Critic's verdicts), `reviewed_by` (`provider`, `model`), `prompt_versions` (`writer`, `critic`); absent on a newsletter issue |
 | `generated_by` | `job`, `run_id`, and the writer's `provider`, `model`, `prompt_version`; a newsletter issue names the job and run only, because code wrote it |
 
@@ -60,14 +60,10 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
   description. The full issue text is never stored.
 - `tags` is empty and `relevance` is `0`: no one ranked or tagged the issue.
 
-## Papers copied by code
+## Papers and repositories
 
-- A `feed-item` of kind `paper` whose `generated_by` names no model was copied from the paper
-  source (arXiv, Hugging Face Papers) by code: `title`, `url`, `published_at`, `fields` (including
-  the paper's `arxiv_id`, `authors` and any counts the source gives) and the abstract as the source
-  gives it as the `Summary`.
-- It has no `quote`, `review` or `Why It Matters`; `tags` is empty and `relevance` is `0`.
-- Papers written by a model, which older files hold, keep every field of the other kinds.
+- This repository holds no papers and no repositories: recent papers live in
+  `atlas-research-content` (Research shows them), and GitHub repositories are not news.
 
 ## Newsletter sources
 
