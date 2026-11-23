@@ -2,7 +2,7 @@
 id: feed-item/2026-09-21-the-current-balance-of-power-in-open-models-7c23c398
 type: feed-item
 slug: 2026-09-21-the-current-balance-of-power-in-open-models-7c23c398
-schema_version: 1.1
+schema_version: 2.0
 title: The current balance of power in open models
 kind: newsletter
 url: https://interconnects.ai/p/the-current-balance-of-power-in-open
@@ -10,7 +10,6 @@ source: Interconnects
 source_tool: rss
 newsletter_source: newsletter-source/interconnects
 published_at: '2026-09-21T11:56:56+00:00'
-relevance: 0
 credit: Public feed; link back to the original post and credit Nathan Lambert.
 fields:
   author: Nathan Lambert

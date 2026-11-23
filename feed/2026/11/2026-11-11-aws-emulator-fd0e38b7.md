@@ -2,7 +2,7 @@
 id: feed-item/2026-11-11-aws-emulator-fd0e38b7
 type: feed-item
 slug: 2026-11-11-aws-emulator-fd0e38b7
-schema_version: 1.0
+schema_version: 2.0
 title: aws-emulator
 kind: news
 url: https://simonwillison.net/2026/Nov/11/aws-emulator
@@ -13,7 +13,6 @@ relevance: 7
 quote: It's written in Rust by a huge swarm of agents - 29,684 commits in the first three weeks of the project.
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - amazon
   - amazon-web-services

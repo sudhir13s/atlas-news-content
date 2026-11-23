@@ -2,7 +2,7 @@
 id: newsletter-source/interconnects
 type: newsletter-source
 slug: interconnects
-schema_version: 1.1
+schema_version: 2.0
 title: Interconnects
 publisher: Nathan Lambert
 homepage: https://www.interconnects.ai/
@@ -12,7 +12,8 @@ language: en
 series:
 - name: Latest open artifacts
   title_pattern: 'Latest open artifacts (#{number}):'
-tags: [newsletter]
+tags:
+- newsletter
 updated: '2026-11-23'
 sources:
 - url: https://www.interconnects.ai/

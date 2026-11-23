@@ -2,7 +2,7 @@
 id: feed-item/2026-11-09-what-frontier-labs-buy-a-data-deep-dive-with-handshake-ai-ga-e4b7803b
 type: feed-item
 slug: 2026-11-09-what-frontier-labs-buy-a-data-deep-dive-with-handshake-ai-ga-e4b7803b
-schema_version: 1.1
+schema_version: 2.0
 title: 'What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord & Team'
 kind: newsletter
 url: https://latent.space/p/handshake
@@ -10,7 +10,6 @@ source: Latent Space
 source_tool: rss
 newsletter_source: newsletter-source/latent-space
 published_at: '2026-11-09T17:15:53+00:00'
-relevance: 0
 credit: Public feed; link back to the original item and credit Latent Space.
 fields:
   author: swyx .ai

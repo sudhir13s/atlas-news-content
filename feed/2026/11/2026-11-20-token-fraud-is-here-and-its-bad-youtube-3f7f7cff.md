@@ -2,7 +2,7 @@
 id: feed-item/2026-11-20-token-fraud-is-here-and-its-bad-youtube-3f7f7cff
 type: feed-item
 slug: 2026-11-20-token-fraud-is-here-and-its-bad-youtube-3f7f7cff
-schema_version: 1.1
+schema_version: 2.0
 title: Token fraud is here and it’s BAD (YouTube)
 kind: news
 url: https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad
@@ -13,7 +13,6 @@ relevance: 5
 quote: Claire is winding down her free trials entirely, which sadly looks like the right decision in the face of this abuse.
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - youtube
   - ai

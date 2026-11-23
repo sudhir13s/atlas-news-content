@@ -2,13 +2,14 @@
 id: newsletter-source/language-models-and-co
 type: newsletter-source
 slug: language-models-and-co
-schema_version: 1.1
+schema_version: 2.0
 title: Language Models & Co.
 publisher: Jay Alammar
 homepage: https://newsletter.languagemodels.co/
 feed_url: https://newsletter.languagemodels.co/feed
 language: en
-tags: [newsletter]
+tags:
+- newsletter
 updated: '2026-11-21'
 sources:
 - url: https://newsletter.languagemodels.co/

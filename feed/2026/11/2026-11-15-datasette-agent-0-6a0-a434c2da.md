@@ -2,7 +2,7 @@
 id: feed-item/2026-11-15-datasette-agent-0-6a0-a434c2da
 type: feed-item
 slug: 2026-11-15-datasette-agent-0-6a0-a434c2da
-schema_version: 1.0
+schema_version: 2.0
 title: datasette-agent 0.6a0
 kind: news
 url: https://simonwillison.net/2026/Nov/15/datasette-agent
@@ -13,7 +13,6 @@ relevance: 5
 quote: Most notably, it now adds an agent prompt directly to the Datasette homepage, with support for hash-mentions of tables and queries
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - datasette-agent
   - llm

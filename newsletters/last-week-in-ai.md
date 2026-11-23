@@ -2,14 +2,15 @@
 id: newsletter-source/last-week-in-ai
 type: newsletter-source
 slug: last-week-in-ai
-schema_version: 1.1
+schema_version: 2.0
 title: Last Week in AI
 publisher: Andrey Kurenkov and Jacky Liang
 homepage: https://lastweekin.ai/
 feed_url: https://lastweekin.ai/feed
 cadence: weekly
 language: en
-tags: [newsletter]
+tags:
+- newsletter
 updated: '2026-11-21'
 sources:
 - url: https://lastweekin.ai/

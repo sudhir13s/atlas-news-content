@@ -2,13 +2,14 @@
 id: newsletter-source/eugene-yan
 type: newsletter-source
 slug: eugene-yan
-schema_version: 1.1
+schema_version: 2.0
 title: Eugene Yan
 publisher: Eugene Yan
 homepage: https://eugeneyan.com/
 feed_url: https://eugeneyan.com/rss/
 language: en
-tags: [newsletter]
+tags:
+- newsletter
 updated: '2026-11-21'
 sources:
 - url: https://eugeneyan.com/

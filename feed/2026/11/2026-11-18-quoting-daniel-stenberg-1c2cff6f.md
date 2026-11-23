@@ -2,7 +2,7 @@
 id: feed-item/2026-11-18-quoting-daniel-stenberg-1c2cff6f
 type: feed-item
 slug: 2026-11-18-quoting-daniel-stenberg-1c2cff6f
-schema_version: 1.0
+schema_version: 2.0
 title: Quoting Daniel Stenberg
 kind: news
 url: https://simonwillison.net/2026/Nov/18/daniel-stenberg
@@ -13,7 +13,6 @@ relevance: 5
 quote: During the time these agents converted 185,000 lines of C code into 340,000 lines of Rust code (I counted), we merged over 300 commits in the actual curl project.
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - daniel-stenberg
   - curl

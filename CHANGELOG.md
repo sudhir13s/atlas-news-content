@@ -5,6 +5,36 @@ All notable changes to `atlas-news-content`. Grouped by schema version / release
 
 ## [Unreleased]
 
+### Schema 2.0 (strict schemas, checked versions; breaking)
+
+Every record was converted by the consumer's `atlas migrate news-restructure`. A step only
+moved, renamed or deleted: no value was added, and `updated` did not move.
+
+- **Changed** `schema_version` to a constant of each schema (`2.0`); a record with any other
+  value is refused. The records said `1.0` or `1.1`.
+- **Changed** to strict: no unknown field at the top level of `newsletter-source`, in
+  `sources[]`, or inside a block of fixed shape (`feed-item` and `atlas-weekly-issue` already
+  refused unknown top-level fields).
+- **Changed** `feed-item.fields` from an open object to the shape of its `source_tool` (`rss`:
+  `categories`, and `author` when the feed names one). The shared part of the type is
+  `feed_item` in `_shared.schema.json`, identical in `atlas-research-content`.
+- **Removed** `relevance: 0` from the 67 newsletter issues. Breaking: an issue code copied
+  states no `relevance`; only a model's score is stored.
+- **Removed** the empty `fields.author` of 15 items whose feed names no author.
+- **Changed** `feed-item` to state its two sorts by `kind`: a `news` item requires `relevance`,
+  `quote`, `review` and a `generated_by` that names a model; a `newsletter` issue requires
+  `newsletter_source`, a `generated_by` with the job and run only, and none of the other three.
+- **Changed** `review` and `generated_by` to shared definitions in `_shared.schema.json`, used
+  by `feed-item` and `atlas-weekly-issue`.
+- **Changed** `newsletter-source.cadence` to an enum (`daily`, `weekly`, `monthly`) and
+  **added** `cadence_note` for a rhythm one word does not say. Latent Space's sentence moved
+  to `cadence_note` word for word; `weekly` stays on two records.
+- **Changed** the 8 `newsletter-source` files to the writer's one text form (a block list for
+  `tags`); no value changed.
+- **Kept** `credit` on every item: the site prints each listed item's credit line, and one
+  source's line changed over time, so it cannot be read back from the source entry.
+- **Kept** `source_tool` on every item: it selects the shape of `fields`.
+
 ### Added
 - Numbered series (schema 1.4): a `series` entry may give a `title_pattern` (literal text with one
   `{number}` placeholder) instead of a `title_prefix`, and a numbered issue carries `series_issue`,
@@ -36,6 +66,9 @@ All notable changes to `atlas-news-content`. Grouped by schema version / release
 
 ## Schema versions
 
+- **2.0** — strict schemas and a fixed version per type; typed `feed-item.fields`; no
+  `relevance` on a newsletter issue; `newsletter-source.cadence` an enum, with `cadence_note`.
+  Breaking: every record was converted.
 - **1.4** — adds `title_pattern` to a `series` entry and `series_issue` to newsletter `feed-item`
   records. Existing records stay valid unchanged.
 - **1.3** — adds the optional `series` of `newsletter-source` and of newsletter `feed-item`

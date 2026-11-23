@@ -2,7 +2,7 @@
 id: feed-item/2026-06-27-using-local-coding-agents-9b152c44
 type: feed-item
 slug: 2026-06-27-using-local-coding-agents-9b152c44
-schema_version: 1.1
+schema_version: 2.0
 title: Using Local Coding Agents
 kind: newsletter
 url: https://magazine.sebastianraschka.com/p/using-local-coding-agents
@@ -10,7 +10,6 @@ source: Ahead of AI
 source_tool: rss
 newsletter_source: newsletter-source/ahead-of-ai
 published_at: '2026-06-27T11:21:58+00:00'
-relevance: 0
 credit: Public feed; link back to the original post and credit Sebastian Raschka.
 fields:
   author: Sebastian Raschka, PhD

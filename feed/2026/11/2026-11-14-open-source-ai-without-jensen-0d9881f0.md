@@ -2,7 +2,7 @@
 id: feed-item/2026-11-14-open-source-ai-without-jensen-0d9881f0
 type: feed-item
 slug: 2026-11-14-open-source-ai-without-jensen-0d9881f0
-schema_version: 1.0
+schema_version: 2.0
 title: Open-source AI without Jensen
 kind: news
 url: https://interconnects.ai/p/open-source-ai-without-jensen

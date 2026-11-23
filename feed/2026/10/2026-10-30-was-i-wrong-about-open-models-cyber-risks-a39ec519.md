@@ -2,7 +2,7 @@
 id: feed-item/2026-10-30-was-i-wrong-about-open-models-cyber-risks-a39ec519
 type: feed-item
 slug: 2026-10-30-was-i-wrong-about-open-models-cyber-risks-a39ec519
-schema_version: 1.1
+schema_version: 2.0
 title: Was I wrong about open models & cyber risks?
 kind: newsletter
 url: https://interconnects.ai/p/was-i-wrong-about-open-models-and
@@ -10,7 +10,6 @@ source: Interconnects
 source_tool: rss
 newsletter_source: newsletter-source/interconnects
 published_at: '2026-10-30T17:36:56+00:00'
-relevance: 0
 credit: Public feed; link back to the original post and credit Nathan Lambert.
 fields:
   author: Nathan Lambert

@@ -2,7 +2,7 @@
 id: feed-item/2026-08-14-glm-5-3-how-chinese-labs-keep-stride-with-the-frontier-488c66b6
 type: feed-item
 slug: 2026-08-14-glm-5-3-how-chinese-labs-keep-stride-with-the-frontier-488c66b6
-schema_version: 1.1
+schema_version: 2.0
 title: 'GLM-5.3: How Chinese labs keep stride with the frontier'
 kind: newsletter
 url: https://interconnects.ai/p/glm-53-how-chinese-labs-keep-stride
@@ -10,7 +10,6 @@ source: Interconnects
 source_tool: rss
 newsletter_source: newsletter-source/interconnects
 published_at: '2026-08-14T21:23:35+00:00'
-relevance: 0
 credit: Public feed; link back to the original post and credit Nathan Lambert.
 fields:
   author: Nathan Lambert

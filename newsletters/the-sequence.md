@@ -2,13 +2,14 @@
 id: newsletter-source/the-sequence
 type: newsletter-source
 slug: the-sequence
-schema_version: 1.1
+schema_version: 2.0
 title: TheSequence
 publisher: Jesus Rodriguez
 homepage: https://thesequence.substack.com/
 feed_url: https://thesequence.substack.com/feed
 language: en
-tags: [newsletter]
+tags:
+- newsletter
 updated: '2026-11-21'
 sources:
 - url: https://thesequence.substack.com/

@@ -30,24 +30,40 @@ this file is the `news`-domain instance.
 ## Frontmatter
 
 Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tags`, `updated`,
-`sources`. Keys are `snake_case`; unknown keys fail validation.
+`sources`. Keys are `snake_case`.
+
+- `schema_version`: the version of the type's schema. Every schema fixes the value (`2.0`) and a
+  record with any other is refused; a breaking change raises it and converts every record.
+- **No unknown fields** on any type, at the top level or inside a block of fixed shape.
+- **A value that is not known is absent.** No empty text, zero or placeholder stands in for it.
+- `review` and `generated_by` are defined once, in `schema/_shared.schema.json`, for every type
+  that carries them.
+
+A feed item's own fields:
 
 | Field | Meaning |
 |---|---|
 | `kind` | `news` or `newsletter`; decided by the fetch tool, never by a model |
 | `url` | Canonical address of the item; unique across the repo |
 | `source` | Name of the entry in `config/sources.yaml` that delivered it |
-| `source_tool` | The fetch tool that read it (`rss`) |
+| `source_tool` | The fetch tool that read it (`rss`); it decides the shape of `fields` |
 | `newsletter_source` | Only on kind `newsletter`: `newsletter-source/<slug>`, the source the issue belongs to |
 | `series` | Only on kind `newsletter`, and only when the title starts with a `title_prefix` of the source's `series` list or matches its `title_pattern`: that series' `name`, copied by code; the `title` itself stays as published |
 | `series_issue` | Only with `series`, and only for a `title_pattern` series: the issue number the pattern found in the title, copied by code |
 | `published_at` | UTC timestamp the source published it; `null` if unknown |
-| `relevance` | Integer 0 to 10; `0` on a newsletter issue, which no one scored |
+| `relevance` | Integer 0 to 10, a model's score; absent on a newsletter issue, which no one scored |
 | `quote` | The passage of the source the summary rests on, word for word; absent on a newsletter issue |
-| `credit` | Licence or credit line the source requires |
-| `fields` | Values copied from the source (categories) |
+| `credit` | Licence or credit line the source requires, as its `config/sources.yaml` entry stated it when the item was read |
+| `fields` | What the `rss` tool read from the feed entry: `categories` (a list, empty when the feed lists none) and `author` (absent when the feed names none); no other key |
 | `review` | `score` (0 to 10, worked out by code from the Critic's verdicts), `reviewed_by` (`provider`, `model`), `prompt_versions` (`writer`, `critic`); absent on a newsletter issue |
-| `generated_by` | `job`, `run_id`, and the writer's `provider`, `model`, `prompt_version`; a newsletter issue names the job and run only, because code wrote it |
+| `generated_by` | `job` and `run_id`; a news item adds the writer's `provider`, `model` and `prompt_version` (all three), a newsletter issue none of them, because code wrote it |
+
+- **The type is shared with `atlas-research-content`**, which holds the papers. Everything but
+  `kind` and the newsletter fields is defined by `feed_item` in `schema/_shared.schema.json`, and
+  that definition and those it refers to are kept word for word the same in both repositories.
+- `kind` decides the rest: a `news` item states `relevance`, `quote` and `review` and names a
+  model in `generated_by`; a `newsletter` issue states none of them and names its
+  `newsletter_source`.
 
 - `tags`: lowercase, hyphen-separated, from the closed list in `config/taxonomy/feed-tags.yaml`.
 - `updated`: ISO date the file was written.
@@ -61,7 +77,7 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
   model: `title`, `url`, `published_at` and the feed's own short description as the `Summary`.
 - The `Summary` is cut at 300 characters on a word boundary and is empty when the feed gives no
   description. The full issue text is never stored.
-- `tags` is empty and `relevance` is `0`: no one ranked or tagged the issue.
+- `tags` is empty and there is no `relevance`: no one ranked or tagged the issue.
 
 ## Papers and repositories
 
@@ -75,7 +91,8 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
 | `publisher` | The person or organisation that publishes the newsletter |
 | `homepage` | The publisher's own page for the newsletter |
 | `feed_url` | The public feed the publisher advertises; the job matches it to its `config/sources.yaml` entry |
-| `cadence` | How often the publisher says it publishes; left out when it does not say |
+| `cadence` | How often the publisher says it publishes, as one word: `daily`, `weekly` or `monthly`; left out when it does not say or one word does not say it |
+| `cadence_note` | The publisher's stated rhythm in a sentence, only when one cadence word does not say it (a daily briefing beside irregular articles); `cadence` is then left out |
 | `language` | ISO 639-1 code of the issues |
 | `series` | Optional list of `{name, title_prefix}` or `{name, title_pattern}` (exactly one of the two): a named series the newsletter publishes under a fixed title prefix (`{name: AINews, title_prefix: "[AINews]"}`) or under a numbered title (`{name: Latest open artifacts, title_pattern: "Latest open artifacts (#{number}):"}`); left out when it has none |
 

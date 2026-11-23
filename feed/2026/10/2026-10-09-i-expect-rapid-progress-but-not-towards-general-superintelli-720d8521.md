@@ -2,7 +2,7 @@
 id: feed-item/2026-10-09-i-expect-rapid-progress-but-not-towards-general-superintelli-720d8521
 type: feed-item
 slug: 2026-10-09-i-expect-rapid-progress-but-not-towards-general-superintelli-720d8521
-schema_version: 1.1
+schema_version: 2.0
 title: I expect rapid progress but not towards general superintelligence
 kind: newsletter
 url: https://interconnects.ai/p/i-expect-rapid-progress-but-not-towards
@@ -10,7 +10,6 @@ source: Interconnects
 source_tool: rss
 newsletter_source: newsletter-source/interconnects
 published_at: '2026-10-09T21:33:47+00:00'
-relevance: 0
 credit: Public feed; link back to the original post and credit Nathan Lambert.
 fields:
   author: Nathan Lambert

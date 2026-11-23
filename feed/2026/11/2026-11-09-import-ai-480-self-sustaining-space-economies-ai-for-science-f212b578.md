@@ -2,7 +2,7 @@
 id: feed-item/2026-11-09-import-ai-480-self-sustaining-space-economies-ai-for-science-f212b578
 type: feed-item
 slug: 2026-11-09-import-ai-480-self-sustaining-space-economies-ai-for-science-f212b578
-schema_version: 1.1
+schema_version: 2.0
 title: 'Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence'
 kind: newsletter
 url: https://jack-clark.net/2026/11/09/import-ai-480-self-sustaining-space-economies-ai-for-science-progress-and-meta-builds-perfect-hands-for-a-superintelligence
@@ -10,7 +10,6 @@ source: Import AI
 source_tool: rss
 newsletter_source: newsletter-source/import-ai
 published_at: '2026-11-09T13:31:34+00:00'
-relevance: 0
 credit: Public feed; link back to the original issue and credit Jack Clark.
 fields:
   author: Jack Clark

@@ -2,7 +2,7 @@
 id: feed-item/2026-11-15-understanding-positional-embeddings-in-modern-llms-eba8c048
 type: feed-item
 slug: 2026-11-15-understanding-positional-embeddings-in-modern-llms-eba8c048
-schema_version: 1.0
+schema_version: 2.0
 title: Understanding Positional Embeddings in Modern LLMs
 kind: news
 url: https://magazine.sebastianraschka.com/p/understanding-positional-embeddings

@@ -2,7 +2,7 @@
 id: feed-item/2026-10-05-import-ai-475-swarm-scaling-google-deepmind-watermarks-biolo-ae4d3dcf
 type: feed-item
 slug: 2026-10-05-import-ai-475-swarm-scaling-google-deepmind-watermarks-biolo-ae4d3dcf
-schema_version: 1.1
+schema_version: 2.0
 title: 'Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy'
 kind: newsletter
 url: https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy
@@ -10,7 +10,6 @@ source: Import AI
 source_tool: rss
 newsletter_source: newsletter-source/import-ai
 published_at: '2026-10-05T12:32:30+00:00'
-relevance: 0
 credit: Public feed; link back to the original issue and credit Jack Clark.
 fields:
   author: Jack Clark

@@ -2,17 +2,18 @@
 id: newsletter-source/latent-space
 type: newsletter-source
 slug: latent-space
-schema_version: 1.1
+schema_version: 2.0
 title: Latent Space
 publisher: Latent Space
 homepage: https://www.latent.space/
 feed_url: https://latent.space/feeds/all.xml
-cadence: AI News briefing every weekday; articles and podcast episodes when published
+cadence_note: AI News briefing every weekday; articles and podcast episodes when published
 language: en
 series:
 - name: AINews
   title_prefix: '[AINews]'
-tags: [newsletter]
+tags:
+- newsletter
 updated: '2026-11-23'
 sources:
 - url: https://www.latent.space/feeds/

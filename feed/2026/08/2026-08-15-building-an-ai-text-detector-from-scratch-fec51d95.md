@@ -2,7 +2,7 @@
 id: feed-item/2026-08-15-building-an-ai-text-detector-from-scratch-fec51d95
 type: feed-item
 slug: 2026-08-15-building-an-ai-text-detector-from-scratch-fec51d95
-schema_version: 1.1
+schema_version: 2.0
 title: Building an AI Text Detector From Scratch
 kind: newsletter
 url: https://magazine.sebastianraschka.com/p/ai-detector-from-scratch
@@ -10,7 +10,6 @@ source: Ahead of AI
 source_tool: rss
 newsletter_source: newsletter-source/ahead-of-ai
 published_at: '2026-08-15T11:54:24+00:00'
-relevance: 0
 credit: Public feed; link back to the original post and credit Sebastian Raschka.
 fields:
   author: Sebastian Raschka, PhD

@@ -2,7 +2,7 @@
 id: feed-item/2026-11-17-running-the-full-server-side-datasette-python-app-in-the-bro-6f0fb022
 type: feed-item
 slug: 2026-11-17-running-the-full-server-side-datasette-python-app-in-the-bro-6f0fb022
-schema_version: 1.0
+schema_version: 2.0
 title: Running the full server-side Datasette Python app in the browser with service workers and Pyodide
 kind: news
 url: https://simonwillison.net/2026/Nov/17/datasette-lite
@@ -13,7 +13,6 @@ relevance: 5
 quote: This system started life back in May as an AI research spike generated using Claude Opus 4.8.
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - javascript
   - projects

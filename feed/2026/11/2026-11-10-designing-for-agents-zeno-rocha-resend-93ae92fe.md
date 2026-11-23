@@ -2,7 +2,7 @@
 id: feed-item/2026-11-10-designing-for-agents-zeno-rocha-resend-93ae92fe
 type: feed-item
 slug: 2026-11-10-designing-for-agents-zeno-rocha-resend-93ae92fe
-schema_version: 1.1
+schema_version: 2.0
 title: Designing for Agents — Zeno Rocha, Resend
 kind: newsletter
 url: https://latent.space/p/resend
@@ -10,7 +10,6 @@ source: Latent Space
 source_tool: rss
 newsletter_source: newsletter-source/latent-space
 published_at: '2026-11-10T20:05:17+00:00'
-relevance: 0
 credit: Public feed; link back to the original item and credit Latent Space.
 fields:
   author: swyx .ai

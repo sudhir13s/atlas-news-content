@@ -2,12 +2,13 @@
 id: newsletter-source/<slug>
 type: newsletter-source
 slug: <slug>
-schema_version: 1.1
+schema_version: 2.0               # the schema's current version; the schema refuses any other
 title: "<Name of the newsletter as the publisher writes it>"
 publisher: "<person or organisation that publishes it>"
 homepage: "<the publisher's own page for the newsletter>"
 feed_url: "<the public RSS or Atom feed the publisher advertises>"
-cadence: "<how often the publisher says it publishes>"   # leave the line out when the publisher does not say
+cadence: weekly                   # daily | weekly | monthly, as the publisher says; leave the line out when it does not say
+cadence_note: "<the publisher's stated rhythm in a sentence>"   # only when one cadence word does not say it; then leave `cadence` out
 language: en
 series:                           # leave the block out when the newsletter publishes no named series
   - { name: "<series name as the publisher writes it>", title_prefix: "<the exact text its issue titles start with>" }

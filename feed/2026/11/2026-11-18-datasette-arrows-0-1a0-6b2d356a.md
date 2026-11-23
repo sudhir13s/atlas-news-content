@@ -2,7 +2,7 @@
 id: feed-item/2026-11-18-datasette-arrows-0-1a0-6b2d356a
 type: feed-item
 slug: 2026-11-18-datasette-arrows-0-1a0-6b2d356a
-schema_version: 1.0
+schema_version: 2.0
 title: datasette-arrows 0.1a0
 kind: news
 url: https://simonwillison.net/2026/Nov/18/datasette-arrows
@@ -13,7 +13,6 @@ relevance: 4
 quote: Datasette 1.0a43 added the ability for plugins to implement streaming export formats.
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - datasette
   - projects

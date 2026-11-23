@@ -2,7 +2,7 @@
 id: feed-item/2026-11-17-ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026-c2b6352c
 type: feed-item
 slug: 2026-11-17-ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026-c2b6352c
-schema_version: 1.1
+schema_version: 2.0
 title: '[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026'
 kind: newsletter
 url: https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026
@@ -11,7 +11,6 @@ source_tool: rss
 newsletter_source: newsletter-source/latent-space
 series: AINews
 published_at: '2026-11-17T09:24:56+00:00'
-relevance: 0
 credit: Public feed; link back to the original item and credit Latent Space.
 fields:
   author: swyx .ai

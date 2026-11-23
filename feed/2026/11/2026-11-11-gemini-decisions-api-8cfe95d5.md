@@ -2,7 +2,7 @@
 id: feed-item/2026-11-11-gemini-decisions-api-8cfe95d5
 type: feed-item
 slug: 2026-11-11-gemini-decisions-api-8cfe95d5
-schema_version: 1.0
+schema_version: 2.0
 title: Gemini Decisions API
 kind: news
 url: https://simonwillison.net/2026/Nov/11/gemini-decisions-api
@@ -13,7 +13,6 @@ relevance: 7
 quote: 'This new model API is almost identical to Jev: it supports the same three types of questions (yes/no, choice, and rubric-scoring) and even reuses Jev''s term "Noul" for a yes/no question.'
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - ai
   - generative-ai

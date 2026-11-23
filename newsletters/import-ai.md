@@ -2,13 +2,14 @@
 id: newsletter-source/import-ai
 type: newsletter-source
 slug: import-ai
-schema_version: 1.1
+schema_version: 2.0
 title: Import AI
 publisher: Jack Clark
 homepage: https://jack-clark.net/
 feed_url: https://jack-clark.net/feed/
 language: en
-tags: [newsletter]
+tags:
+- newsletter
 updated: '2026-11-19'
 sources:
 - url: https://jack-clark.net/

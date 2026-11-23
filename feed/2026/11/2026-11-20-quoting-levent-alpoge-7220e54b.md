@@ -2,7 +2,7 @@
 id: feed-item/2026-11-20-quoting-levent-alpoge-7220e54b
 type: feed-item
 slug: 2026-11-20-quoting-levent-alpoge-7220e54b
-schema_version: 1.1
+schema_version: 2.0
 title: Quoting Levent Alpöge
 kind: news
 url: https://simonwillison.net/2026/Nov/20/levent-alpoge
@@ -13,7 +13,6 @@ relevance: 7
 quote: I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis.
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - anthropic
   - claude

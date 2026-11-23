@@ -2,7 +2,7 @@
 id: feed-item/2026-11-15-datasette-apps-0-4a0-756ac6b7
 type: feed-item
 slug: 2026-11-15-datasette-apps-0-4a0-756ac6b7
-schema_version: 1.0
+schema_version: 2.0
 title: datasette-apps 0.4a0
 kind: news
 url: https://simonwillison.net/2026/Nov/15/datasette-apps
@@ -13,7 +13,6 @@ relevance: 6
 quote: '0.4a0 adds support for linking: you can link to an app with #fragments in the URL and the app can see and use those, plus supported URL schemes are reported back to Datasette Agent so it can help write apps that link to each other.'
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - datasette-agent
   - datasette-apps

@@ -2,7 +2,7 @@
 id: feed-item/2026-11-16-import-ai-481-ai-sub-contractors-a-wet-lab-for-ai-and-subter-1ac8bff4
 type: feed-item
 slug: 2026-11-16-import-ai-481-ai-sub-contractors-a-wet-lab-for-ai-and-subter-1ac8bff4
-schema_version: 1.0
+schema_version: 2.0
 title: 'Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development'
 kind: news
 url: https://jack-clark.net/2026/11/16/import-ai-481-ai-sub-contractors-a-wet-lab-for-ai-and-subterfuge-during-development

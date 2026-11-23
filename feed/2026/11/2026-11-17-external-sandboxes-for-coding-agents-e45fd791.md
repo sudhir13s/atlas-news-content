@@ -2,7 +2,7 @@
 id: feed-item/2026-11-17-external-sandboxes-for-coding-agents-e45fd791
 type: feed-item
 slug: 2026-11-17-external-sandboxes-for-coding-agents-e45fd791
-schema_version: 1.0
+schema_version: 2.0
 title: External sandboxes for coding agents
 kind: news
 url: https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents
@@ -13,7 +13,6 @@ relevance: 7
 quote: My post on the Prime Radiant blog introduces the external sandbox pattern, where code executed by the agent runs inside a dedicated sandbox while the agent itself lives outside of that sandbox.
 credit: Public feed; link back to the original post and credit Simon Willison.
 fields:
-  author: ''
   categories:
   - sandboxing
   - security

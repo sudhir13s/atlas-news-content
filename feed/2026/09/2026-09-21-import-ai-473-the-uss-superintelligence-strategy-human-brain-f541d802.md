@@ -2,7 +2,7 @@
 id: feed-item/2026-09-21-import-ai-473-the-uss-superintelligence-strategy-human-brain-f541d802
 type: feed-item
 slug: 2026-09-21-import-ai-473-the-uss-superintelligence-strategy-human-brain-f541d802
-schema_version: 1.1
+schema_version: 2.0
 title: 'Import AI 473: The US’s superintelligence strategy; human brain in a mouse skull; and machine hermeneutics'
 kind: newsletter
 url: https://jack-clark.net/2026/09/21/import-ai-473-the-uss-superintelligence-strategy-human-brain-in-a-mouse-skull-and-machine-hermeneutics
@@ -10,7 +10,6 @@ source: Import AI
 source_tool: rss
 newsletter_source: newsletter-source/import-ai
 published_at: '2026-09-21T12:31:04+00:00'
-relevance: 0
 credit: Public feed; link back to the original issue and credit Jack Clark.
 fields:
   author: Jack Clark
