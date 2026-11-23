@@ -24,7 +24,8 @@ generated_by:
   model: "<model>"
   prompt_version: "<version>"
 newsletter_source: newsletter-source/<slug>   # only on kind newsletter: the source the issue belongs to
-series: "<series name>"           # only on kind newsletter, when the title starts with a prefix the source's `series` lists; the title keeps the prefix
+series: "<series name>"           # only on kind newsletter, when the title matches a series the source lists; the title stays as published
+series_issue: 25                  # only with a numbered (title_pattern) series: the number found in the title
 tags: [<tag>]
 updated: <YYYY-MM-DD>
 sources:

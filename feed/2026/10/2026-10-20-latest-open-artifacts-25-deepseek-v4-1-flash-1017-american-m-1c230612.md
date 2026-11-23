@@ -9,6 +9,8 @@ url: https://interconnects.ai/p/latest-open-artifacts-25-deepseek
 source: Interconnects
 source_tool: rss
 newsletter_source: newsletter-source/interconnects
+series: Latest open artifacts
+series_issue: 25
 published_at: '2026-10-20T17:04:21+00:00'
 relevance: 0
 credit: Public feed; link back to the original post and credit Nathan Lambert.

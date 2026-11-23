@@ -9,6 +9,8 @@ url: https://interconnects.ai/p/latest-open-artifacts-24-motif-3
 source: Interconnects
 source_tool: rss
 newsletter_source: newsletter-source/interconnects
+series: Latest open artifacts
+series_issue: 24
 published_at: '2026-09-08T14:15:25+00:00'
 relevance: 0
 credit: Public feed; link back to the original post and credit Nathan Lambert.
