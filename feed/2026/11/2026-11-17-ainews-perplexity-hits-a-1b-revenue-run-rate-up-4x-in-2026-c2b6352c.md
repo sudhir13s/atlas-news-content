@@ -9,6 +9,7 @@ url: https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-i
 source: Latent Space
 source_tool: rss
 newsletter_source: newsletter-source/latent-space
+series: AINews
 published_at: '2026-11-17T09:24:56+00:00'
 relevance: 0
 credit: Public feed; link back to the original item and credit Latent Space.

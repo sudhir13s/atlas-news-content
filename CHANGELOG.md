@@ -6,6 +6,10 @@ All notable changes to `atlas-news-content`. Grouped by schema version / release
 ## [Unreleased]
 
 ### Added
+- Named series (schema 1.3): `newsletter-source` takes an optional `series` list of
+  `{name, title_prefix}`, and a `feed-item` of kind `newsletter` an optional `series` (the series'
+  name, copied by code when the issue title starts with a listed prefix). The title stays as
+  published. Latent Space lists its `AINews` series.
 - The `newsletter-source` type (folder `newsletters/`): one record per newsletter the feed follows,
   with its publisher, homepage, feed address, stated cadence and language.
 - Four `newsletter-source` records: Import AI, Interconnects, Ahead of AI, Latent Space.
@@ -29,6 +33,8 @@ All notable changes to `atlas-news-content`. Grouped by schema version / release
 
 ## Schema versions
 
+- **1.3** — adds the optional `series` of `newsletter-source` and of newsletter `feed-item`
+  records. Existing records stay valid unchanged.
 - **1.2** — adds the `atlas-weekly-issue` type. Existing records stay valid unchanged.
 - **1.1** — adds the `newsletter-source` type and the `newsletter_source` field; relaxes `feed-item`
   for code-written newsletter issues. Existing records stay valid unchanged.

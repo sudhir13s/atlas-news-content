@@ -9,6 +9,8 @@ homepage: "<the publisher's own page for the newsletter>"
 feed_url: "<the public RSS or Atom feed the publisher advertises>"
 cadence: "<how often the publisher says it publishes>"   # leave the line out when the publisher does not say
 language: en
+series:                           # leave the block out when the newsletter publishes no named series
+  - { name: "<series name as the publisher writes it>", title_prefix: "<the exact text its issue titles start with>" }
 tags: [newsletter]
 updated: <YYYY-MM-DD>
 sources:

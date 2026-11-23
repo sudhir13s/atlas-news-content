@@ -9,6 +9,7 @@ url: https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo
 source: Latent Space
 source_tool: rss
 newsletter_source: newsletter-source/latent-space
+series: AINews
 published_at: '2026-11-10T06:34:44+00:00'
 relevance: 0
 credit: Public feed; link back to the original item and credit Latent Space.

@@ -9,6 +9,7 @@ url: https://latent.space/p/ainews-the-no-ai-slop-manifesto
 source: Latent Space
 source_tool: rss
 newsletter_source: newsletter-source/latent-space
+series: AINews
 published_at: '2026-11-14T08:31:02+00:00'
 relevance: 0
 credit: Public feed; link back to the original item and credit Latent Space.

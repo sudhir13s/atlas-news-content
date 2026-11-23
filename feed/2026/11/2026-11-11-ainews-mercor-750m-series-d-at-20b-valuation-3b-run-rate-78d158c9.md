@@ -9,6 +9,7 @@ url: https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-
 source: Latent Space
 source_tool: rss
 newsletter_source: newsletter-source/latent-space
+series: AINews
 published_at: '2026-11-11T09:34:28+00:00'
 relevance: 0
 credit: Public feed; link back to the original item and credit Latent Space.

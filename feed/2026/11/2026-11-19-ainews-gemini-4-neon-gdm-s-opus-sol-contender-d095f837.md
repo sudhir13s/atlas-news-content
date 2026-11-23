@@ -9,6 +9,7 @@ url: https://latent.space/p/ainews-gemini-4-neon-gdm-s-opus-sol-contender
 source: Latent Space
 source_tool: rss
 newsletter_source: newsletter-source/latent-space
+series: AINews
 published_at: '2026-11-19T07:07:43+00:00'
 relevance: 0
 credit: Public feed; link back to the original item and credit Latent Space.

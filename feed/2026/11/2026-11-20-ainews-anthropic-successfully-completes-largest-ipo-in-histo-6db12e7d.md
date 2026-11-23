@@ -9,6 +9,7 @@ url: https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-
 source: Latent Space
 source_tool: rss
 newsletter_source: newsletter-source/latent-space
+series: AINews
 published_at: '2026-11-20T07:12:24+00:00'
 relevance: 0
 credit: Public feed; link back to the original item and credit Latent Space.
