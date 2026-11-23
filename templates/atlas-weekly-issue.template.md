@@ -2,7 +2,7 @@
 id: atlas-weekly-issue/<YYYY>-w<WW>
 type: atlas-weekly-issue
 slug: <YYYY>-w<WW>
-schema_version: 1.2
+schema_version: 2.0               # the schema's current version; the schema refuses any other
 title: "Atlas Weekly, week <WW> of <YYYY>"
 week_start: '<Monday, YYYY-MM-DD>'
 week_end: '<Sunday, YYYY-MM-DD>'

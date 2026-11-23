@@ -2,13 +2,14 @@
 id: newsletter-source/ahead-of-ai
 type: newsletter-source
 slug: ahead-of-ai
-schema_version: 1.1
+schema_version: 2.0
 title: Ahead of AI
 publisher: Sebastian Raschka
 homepage: https://magazine.sebastianraschka.com/
 feed_url: https://magazine.sebastianraschka.com/feed
 language: en
-tags: [newsletter]
+tags:
+- newsletter
 updated: '2026-11-19'
 sources:
 - url: https://magazine.sebastianraschka.com/

@@ -2,9 +2,11 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/news/newsletter-source.schema.json",
   "title": "newsletter-source",
+  "unevaluatedProperties": false,
   "allOf": [{ "$ref": "_shared.schema.json#/$defs/base" }],
   "properties": {
     "type": { "const": "newsletter-source" },
+    "schema_version": { "const": 2.0 },
     "publisher": {
       "type": "string",
       "minLength": 1,
@@ -21,9 +23,13 @@
       "description": "the public RSS or Atom feed the publisher advertises; the job matches this address to its source entry"
     },
     "cadence": {
+      "enum": ["daily", "weekly", "monthly"],
+      "description": "how often the publisher says it publishes, when one word says it; absent when the publisher does not say or publishes on more than one rhythm"
+    },
+    "cadence_note": {
       "type": "string",
       "minLength": 1,
-      "description": "how often the publisher says it publishes; absent when the publisher does not say"
+      "description": "the publisher's stated rhythm in a sentence, when one cadence word does not say it (for example a daily briefing beside irregular articles); absent otherwise"
     },
     "language": {
       "type": "string",

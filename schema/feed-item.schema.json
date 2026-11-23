@@ -2,25 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://theaiatlas.dev/schema/news/feed-item.schema.json",
   "title": "feed-item",
+  "unevaluatedProperties": false,
   "allOf": [
     { "$ref": "_shared.schema.json#/$defs/base" },
-    {
-      "if": { "properties": { "kind": { "const": "newsletter" } }, "required": ["kind"] },
-      "then": { "required": ["newsletter_source"] },
-      "else": {
-        "required": ["quote", "review"],
-        "properties": {
-          "generated_by": { "required": ["provider", "model", "prompt_version"] }
-        }
-      }
-    }
+    { "$ref": "_shared.schema.json#/$defs/feed_item" }
   ],
   "properties": {
     "type": { "const": "feed-item" },
-    "kind": { "type": "string", "enum": ["news", "newsletter"] },
-    "url": { "type": "string", "format": "uri", "minLength": 1 },
-    "source": { "type": "string", "minLength": 1 },
-    "source_tool": { "type": "string", "minLength": 1 },
+    "schema_version": { "const": 2.0 },
+    "kind": { "enum": ["news", "newsletter"], "description": "decided by the fetch tool, never by a model; papers live in atlas-research-content" },
+    "source_tool": { "const": "rss" },
     "newsletter_source": {
       "type": "string",
       "pattern": "^newsletter-source/[a-z0-9]+(?:-[a-z0-9]+)*$",
@@ -35,69 +26,28 @@
       "type": "integer",
       "minimum": 0,
       "description": "the issue number a `title_pattern` series found in the title, copied by code; present only with `series`, and only for a numbered series"
-    },
-    "published_at": {
-      "type": ["string", "null"],
-      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"
-    },
-    "relevance": { "type": "integer", "minimum": 0, "maximum": 10 },
-    "quote": { "type": "string", "minLength": 1 },
-    "credit": { "type": "string", "minLength": 1 },
-    "fields": { "type": "object" },
-    "review": {
-      "type": "object",
-      "required": ["score", "reviewed_by", "prompt_versions"],
-      "additionalProperties": false,
-      "properties": {
-        "score": { "type": "number", "minimum": 0, "maximum": 10 },
-        "reviewed_by": {
-          "type": "object",
-          "required": ["provider", "model"],
-          "additionalProperties": false,
-          "properties": {
-            "provider": { "type": "string", "minLength": 1 },
-            "model": { "type": "string", "minLength": 1 }
-          }
-        },
-        "prompt_versions": {
-          "type": "object",
-          "required": ["writer", "critic"],
-          "additionalProperties": false,
-          "properties": {
-            "writer": { "type": "string", "minLength": 1 },
-            "critic": { "type": "string", "minLength": 1 }
-          }
-        }
-      }
-    },
-    "generated_by": {
-      "type": "object",
-      "required": ["job", "run_id"],
-      "additionalProperties": false,
-      "dependentRequired": {
-        "provider": ["model", "prompt_version"],
-        "model": ["provider", "prompt_version"],
-        "prompt_version": ["provider", "model"]
-      },
-      "properties": {
-        "job": { "type": "string", "minLength": 1 },
-        "run_id": { "type": "integer", "minimum": 0 },
-        "provider": { "type": "string", "minLength": 1 },
-        "model": { "type": "string", "minLength": 1 },
-        "prompt_version": { "type": "string", "minLength": 1 }
-      }
     }
   },
-  "required": [
-    "kind",
-    "url",
-    "source",
-    "source_tool",
-    "published_at",
-    "relevance",
-    "credit",
-    "fields",
-    "generated_by"
-  ],
-  "unevaluatedProperties": false
+  "required": ["kind"],
+  "dependentRequired": { "series_issue": ["series"] },
+  "oneOf": [
+    {
+      "description": "a newsletter issue: copied from the publisher's feed by code",
+      "required": ["newsletter_source"],
+      "properties": {
+        "kind": { "const": "newsletter" },
+        "generated_by": { "$ref": "_shared.schema.json#/$defs/generated_by_code" }
+      }
+    },
+    {
+      "description": "a news item: ranked, tagged and summarized by a model",
+      "properties": {
+        "kind": { "const": "news" },
+        "generated_by": { "$ref": "_shared.schema.json#/$defs/generated_by_model" },
+        "newsletter_source": false,
+        "series": false,
+        "series_issue": false
+      }
+    }
+  ]
 }
