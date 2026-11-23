@@ -9,8 +9,11 @@ homepage: https://www.interconnects.ai/
 feed_url: https://www.interconnects.ai/feed
 cadence: weekly
 language: en
+series:
+- name: Latest open artifacts
+  title_pattern: 'Latest open artifacts (#{number}):'
 tags: [newsletter]
-updated: '2026-11-19'
+updated: '2026-11-23'
 sources:
 - url: https://www.interconnects.ai/
   title: Interconnects AI

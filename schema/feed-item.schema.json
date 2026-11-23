@@ -31,6 +31,11 @@
       "minLength": 1,
       "description": "the name of the series of its newsletter an issue belongs to, copied by code from the source's `series` list; present only on kind newsletter"
     },
+    "series_issue": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "the issue number a `title_pattern` series found in the title, copied by code; present only with `series`, and only for a numbered series"
+    },
     "published_at": {
       "type": ["string", "null"],
       "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"

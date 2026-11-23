@@ -6,6 +6,9 @@ All notable changes to `atlas-news-content`. Grouped by schema version / release
 ## [Unreleased]
 
 ### Added
+- Numbered series (schema 1.4): a `series` entry may give a `title_pattern` (literal text with one
+  `{number}` placeholder) instead of a `title_prefix`, and a numbered issue carries `series_issue`,
+  the number found in its title. Interconnects lists `Latest open artifacts`.
 - Named series (schema 1.3): `newsletter-source` takes an optional `series` list of
   `{name, title_prefix}`, and a `feed-item` of kind `newsletter` an optional `series` (the series'
   name, copied by code when the issue title starts with a listed prefix). The title stays as
@@ -33,6 +36,8 @@ All notable changes to `atlas-news-content`. Grouped by schema version / release
 
 ## Schema versions
 
+- **1.4** — adds `title_pattern` to a `series` entry and `series_issue` to newsletter `feed-item`
+  records. Existing records stay valid unchanged.
 - **1.3** — adds the optional `series` of `newsletter-source` and of newsletter `feed-item`
   records. Existing records stay valid unchanged.
 - **1.2** — adds the `atlas-weekly-issue` type. Existing records stay valid unchanged.

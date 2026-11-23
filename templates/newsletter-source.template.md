@@ -11,6 +11,7 @@ cadence: "<how often the publisher says it publishes>"   # leave the line out wh
 language: en
 series:                           # leave the block out when the newsletter publishes no named series
   - { name: "<series name as the publisher writes it>", title_prefix: "<the exact text its issue titles start with>" }
+  # or, for a numbered series: { name: "<series name>", title_pattern: "<literal text with one {number}, e.g. Weekly digest #{number}:>" }
 tags: [newsletter]
 updated: <YYYY-MM-DD>
 sources:

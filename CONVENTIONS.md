@@ -39,7 +39,8 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
 | `source` | Name of the entry in `config/sources.yaml` that delivered it |
 | `source_tool` | The fetch tool that read it (`rss`) |
 | `newsletter_source` | Only on kind `newsletter`: `newsletter-source/<slug>`, the source the issue belongs to |
-| `series` | Only on kind `newsletter`, and only when the title starts with a `title_prefix` of the source's `series` list: that series' `name`, copied by code; the `title` itself keeps the prefix as published |
+| `series` | Only on kind `newsletter`, and only when the title starts with a `title_prefix` of the source's `series` list or matches its `title_pattern`: that series' `name`, copied by code; the `title` itself stays as published |
+| `series_issue` | Only with `series`, and only for a `title_pattern` series: the issue number the pattern found in the title, copied by code |
 | `published_at` | UTC timestamp the source published it; `null` if unknown |
 | `relevance` | Integer 0 to 10; `0` on a newsletter issue, which no one scored |
 | `quote` | The passage of the source the summary rests on, word for word; absent on a newsletter issue |
@@ -76,7 +77,11 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
 | `feed_url` | The public feed the publisher advertises; the job matches it to its `config/sources.yaml` entry |
 | `cadence` | How often the publisher says it publishes; left out when it does not say |
 | `language` | ISO 639-1 code of the issues |
-| `series` | Optional list of `{name, title_prefix}`: a named series the newsletter publishes under a fixed title prefix (for example `{name: AINews, title_prefix: "[AINews]"}`); left out when it has none |
+| `series` | Optional list of `{name, title_prefix}` or `{name, title_pattern}` (exactly one of the two): a named series the newsletter publishes under a fixed title prefix (`{name: AINews, title_prefix: "[AINews]"}`) or under a numbered title (`{name: Latest open artifacts, title_pattern: "Latest open artifacts (#{number}):"}`); left out when it has none |
+
+- A `title_pattern` is literal text with exactly one `{number}` placeholder, matched from the start
+  of the title; the number is digits. It is not a regular expression and nothing else in it is
+  special.
 
 - A `series` entry is added only for a recurring, named series the publisher itself runs, seen in
   the issue titles of its own feed. A newsletter's own name or issue number (`Import AI 480:`) and
