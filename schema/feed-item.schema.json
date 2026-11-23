@@ -26,6 +26,11 @@
       "pattern": "^newsletter-source/[a-z0-9]+(?:-[a-z0-9]+)*$",
       "description": "the newsletter-source record an issue belongs to; present only on kind newsletter"
     },
+    "series": {
+      "type": "string",
+      "minLength": 1,
+      "description": "the name of the series of its newsletter an issue belongs to, copied by code from the source's `series` list; present only on kind newsletter"
+    },
     "published_at": {
       "type": ["string", "null"],
       "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"

@@ -9,8 +9,11 @@ homepage: https://www.latent.space/
 feed_url: https://latent.space/feeds/all.xml
 cadence: AI News briefing every weekday; articles and podcast episodes when published
 language: en
+series:
+- name: AINews
+  title_prefix: '[AINews]'
 tags: [newsletter]
-updated: '2026-11-19'
+updated: '2026-11-23'
 sources:
 - url: https://www.latent.space/feeds/
   title: RSS feeds, Latent Space

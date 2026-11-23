@@ -39,6 +39,7 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
 | `source` | Name of the entry in `config/sources.yaml` that delivered it |
 | `source_tool` | The fetch tool that read it (`rss`) |
 | `newsletter_source` | Only on kind `newsletter`: `newsletter-source/<slug>`, the source the issue belongs to |
+| `series` | Only on kind `newsletter`, and only when the title starts with a `title_prefix` of the source's `series` list: that series' `name`, copied by code; the `title` itself keeps the prefix as published |
 | `published_at` | UTC timestamp the source published it; `null` if unknown |
 | `relevance` | Integer 0 to 10; `0` on a newsletter issue, which no one scored |
 | `quote` | The passage of the source the summary rests on, word for word; absent on a newsletter issue |
@@ -75,6 +76,11 @@ Base fields on every file: `id`, `type`, `slug`, `schema_version`, `title`, `tag
 | `feed_url` | The public feed the publisher advertises; the job matches it to its `config/sources.yaml` entry |
 | `cadence` | How often the publisher says it publishes; left out when it does not say |
 | `language` | ISO 639-1 code of the issues |
+| `series` | Optional list of `{name, title_prefix}`: a named series the newsletter publishes under a fixed title prefix (for example `{name: AINews, title_prefix: "[AINews]"}`); left out when it has none |
+
+- A `series` entry is added only for a recurring, named series the publisher itself runs, seen in
+  the issue titles of its own feed. A newsletter's own name or issue number (`Import AI 480:`) and
+  a one-off label (`[Special]`, `Podcast:`) are not series.
 
 - A source is added only when the publisher advertises a public feed, `robots.txt` allows reading
   it and the publisher's terms do not bar automated reading. The `Overview` is the author's own
